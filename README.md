@@ -1,6 +1,6 @@
 # GOAL
 
-This is a demo to show-case how to implement an easy date picker in rails using the `simple form` gem.
+This is a demo to show-case how to implement booking logic according to the available dates.
 
 [You can also check my other demos](https://github.com/andrerferrer/dedemos/blob/master/README.md#ded%C3%A9mos).
 
