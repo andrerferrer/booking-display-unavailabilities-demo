@@ -23,6 +23,8 @@ def other_booking_overlap
 end
 ```
 
+### The problem:
+
 But it's very inneficient. We will deserialize lots of data from the DB and we won't use it much.
 
 Therefore, a better solution is to solve the filtering with SQL itself.
