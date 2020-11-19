@@ -1,0 +1,29 @@
+<h1>bookings</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <p>
+        <%= booking.restaurant.name %>
+      </p>
+      <p>
+        <%# https://apidock.com/ruby/DateTime/strftime %>
+        Booked at: <%= booking.booked_at.strftime('%d/%b/%Y %H:%M') %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+
+<div class="w-50 m-auto">
+  <h2>Create a new booking</h2>
+  <%= simple_form_for Booking.new do |f| %>
+    <%= f.input :booked_at, as: :string, input_html: {class: "datepicker"} %>
+
+    <%# It would work as date as well! %>
+    <%# f.input :booked_at, as: :date, html5: true %>
+    
+    <%= f.association :restaurant %>
+    <%= f.submit %>
+  <% end %>
+</div>
