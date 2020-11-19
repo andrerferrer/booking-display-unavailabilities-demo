@@ -7,7 +7,7 @@ puts "Create some Restaurants"
 
 # To help with seeding date and datetimes
 # https://stackoverflow.com/questions/5474164/rails-seeding-database-data-and-date-formats
-Booking.create! booked_at: DateTime.tomorrow.noon, restaurant: Restaurant.last
+Booking.create! start_on: Date.tomorrow.noon, end_on: 2.days.from_now, restaurant: Restaurant.last
 
 puts "Let's drink a beer"
 puts %{
