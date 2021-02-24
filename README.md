@@ -51,13 +51,14 @@ const initFlatpickr = () => {
 };
 ```
 
-
-
 And we're good to go
 
 Good Luck 🍀 and Have Fun 🤓
 
+---
+
 Sources:
-https://flatpickr.js.org/examples#disabling-dates
-https://medium.com/lightthefuse/ruby-on-rails-date-validation-in-a-booking-and-disabling-dates-in-date-picker-3e5b4e9b4640
-https://medium.com/@sonia.montero/date-validations-and-flatpickr-setup-for-rails-24c78d6eb784
+
+* https://flatpickr.js.org/examples#disabling-dates 
+* https://medium.com/lightthefuse/ruby-on-rails-date-validation-in-a-booking-and-disabling-dates-in-date-picker-3e5b4e9b4640
+* https://medium.com/@sonia.montero/date-validations-and-flatpickr-setup-for-rails-24c78d6eb784
