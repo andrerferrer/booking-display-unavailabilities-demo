@@ -4,10 +4,15 @@ This is a demo to show-case how to implement the display of the unavailable date
 
 This demo was created from [this demo](https://github.com/andrerferrer/booking-logic-improved-demo#goal).
 
+Some things were changed to make the example simpler.
+
+The reviews logic was removed and the form was sent to the show page of the restaurant.
+
 [You can also check my other demos](https://github.com/andrerferrer/dedemos/blob/master/README.md#ded%C3%A9mos).
 
 ## What needs to be done?
 
+### 
 
 And we're good to go
 
