@@ -8,19 +8,19 @@ class BookingsController < ApplicationController
   def create
     
     @booking = Booking.new(strong_params)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.restaurant = @restaurant
     if @booking.save 
-      redirect_to(bookings_path) 
+      redirect_to(@restaurant) 
     else 
-      # find all bookings to render index
-      @bookings = Booking.all
-      render(:index)
+      render('restaurants/show')
     end
   end
 
   private
 
   def strong_params
-    params.require(:booking).permit(:start_on, :end_on, :restaurant_id)
+    params.require(:booking).permit(:start_on, :end_on)
   end
 
 end

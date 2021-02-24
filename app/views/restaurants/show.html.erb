@@ -1,21 +1,39 @@
-<%= link_to "Home", root_path %>
+<div class="container">
+  <%= link_to "Home", root_path %>
 
-<h1><%= @restaurant.name %> <small><%= @restaurant.address %></small></h1>
-<h2>
-  <%= pluralize @restaurant.reviews.size, "review" %>
-</h2>
+  <h1><%= @restaurant.name %> <small><%= @restaurant.address %></small></h1>
 
-<div id="reviews">
-  <% if @restaurant.reviews.blank? %>
-    Be the first to leave a review for <%= @restaurant.name %>
-  <% else %>
-    <% @restaurant.reviews.each do |review| %>
-      <p><%= review.content %></p>
+  <hr>
+  <h2>bookings</h2>
+
+  <ul>
+    <% @restaurant.bookings.each do |booking| %>
+      <li class='card'>
+        <p>
+          <%# https://apidock.com/ruby/DateTime/strftime %>
+          Booked from: <%= booking.start_on.strftime('%d/%b/%Y') %>
+          to: <%= booking.end_on.strftime('%d/%b/%Y') %>
+        </p>
+      </li>
     <% end %>
-  <% end %>
-</div>
+  </ul>
 
-<%= simple_form_for([ @restaurant, @review ]) do |f| %>
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+
+  <div class="w-50 m-auto">
+    <h2>Create a new booking</h2>
+    <%= simple_form_for [@restaurant, @booking] do |f| %>
+
+      <% if f.object.errors[:base].present? %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence %>
+      <% end %>
+
+      <%= f.input :start_on, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :end_on, as: :string, input_html: {class: "datepicker"} %>
+
+      <%# It would work as date as well! %>
+      <%# f.input :booked_at, as: :date, html5: true %>
+      
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

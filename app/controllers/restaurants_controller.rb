@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show
     set_restaurant
-    @review = Review.new
+    @booking = Booking.new
   end
 
   def new
