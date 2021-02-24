@@ -21,7 +21,7 @@
 
   <div class="w-50 m-auto">
     <h2>Create a new booking</h2>
-    <%= simple_form_for [@restaurant, @booking] do |f| %>
+    <%= simple_form_for [@restaurant, @booking], data: { unavailable_dates: @restaurant.unavailable_dates.to_json } do |f| %>
 
       <% if f.object.errors[:base].present? %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence %>
